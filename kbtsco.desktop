@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kbtsco
+Icon=kdebluetooth
+Type=Application
+Name=kbtsco
+GenericName=Kbtsco
+Categories=Qt;KDE;X-bluetooth;
+Comment=Kbtsco
