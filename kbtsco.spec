@@ -9,6 +9,9 @@ Source0:	http://www.kde-apps.org/content/files/45427-%{name}.kmdr.tar.bz2
 # Source0-md5:	762fcde7683eb666dfe7300ae83af828
 URL:		http://www.kde-apps.org/content/show.php?content=45427
 BuildRequires:	rpmbuild(macros) >= 1.129
+Requires:	bluez-hcidump
+Requires:	bluez-utils
+Requires:	btsco
 Requires:	kdewebdev-kommander
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
