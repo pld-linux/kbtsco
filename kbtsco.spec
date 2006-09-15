@@ -1,8 +1,10 @@
+%bcond_without	kdialog # don't require kdialog on install 
+
 Summary:	Kbtsco
 Summary(pl):	Kbtsco
 Name:		kbtsco
 Version:	1.4.1
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.kde-apps.org/content/files/45427-%{name}.kmdr.tar.bz2
@@ -13,6 +15,7 @@ Requires:	bluez-hcidump
 Requires:	bluez-utils
 Requires:	btsco
 Requires:	kdewebdev-kommander
+%{?with_kdialog:Requires: kdebase-kdialog}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +38,12 @@ install kbtsco.kmdr $RPM_BUILD_ROOT%{_datadir}/%{name}
 cat > $RPM_BUILD_ROOT%{_bindir}/kbtsco <<EOF
 #!/bin/sh
 
+%if %{with kdialog}
+if [ ! -x %{_bindir}/kmdr-executor ]; then
+exec %{_bindir}/kdialog --error "Package kdewebdev-kommander is missing.\nYou need to install it."
+exit 0
+fi
+%endif
 exec %{_bindir}/kmdr-executor %{_datadir}/%{name}/%{name}.kmdr
 
 EOF
