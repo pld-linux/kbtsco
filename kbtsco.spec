@@ -4,11 +4,12 @@ Summary:	Kbtsco
 Summary(pl):	Kbtsco
 Name:		kbtsco
 Version:	1.4.1
-Release:	0.2
+Release:	0.3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.kde-apps.org/content/files/45427-%{name}.kmdr.tar.bz2
 # Source0-md5:	762fcde7683eb666dfe7300ae83af828
+Source1:	%{name}.desktop
 URL:		http://www.kde-apps.org/content/show.php?content=45427
 BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	bluez-hcidump
@@ -32,8 +33,9 @@ headphone as device
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_bindir}}
+install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_bindir},%{_desktopdir}/kde}
 install kbtsco.kmdr $RPM_BUILD_ROOT%{_datadir}/%{name}
+install %SOURCE1 $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 cat > $RPM_BUILD_ROOT%{_bindir}/kbtsco <<EOF
 #!/bin/sh
@@ -56,3 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kbtsco
 %dir %{_datadir}/%{name}
 %attr(755,root,root) %{_datadir}/%{name}/kbtsco.kmdr
+%{_desktopdir}/kde/%{name}.desktop
