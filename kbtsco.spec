@@ -8,7 +8,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.kde-apps.org/content/files/45427-%{name}.kmdr.tar.bz2
-# Source0-md5:	12e8557903cc80657cc61bafdf5e5c32
+# Source0-md5:	561697cf201fc3ad6177219c71bd4b1d
 Source1:	%{name}.desktop
 URL:		http://www.kde-apps.org/content/show.php?content=45427
 BuildRequires:	rpmbuild(macros) >= 1.129
