@@ -1,23 +1,22 @@
-%bcond_without	kdialog # don't require kdialog on install
 
 Summary:	kbtsco is a kommander script that help connection with bluetooth headset
 Summary(pl):	kbtsco to skrypt kommandera, który pomaga ³±czyæ zestaw s³uchawkowy Bluetooth
 Name:		kbtsco
-Version:	1.4.3
-Release:	2
+Version:	1.4.4
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.kde-apps.org/content/files/45427-%{name}.kmdr.tar.bz2
-# Source0-md5:	561697cf201fc3ad6177219c71bd4b1d
+# Source0-md5:	18d2ea8064561c568ab4d19c5ad6d6d6
 Source1:	%{name}.desktop
+Patch0:		%{name}-path.patch
 URL:		http://www.kde-apps.org/content/show.php?content=45427
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	sed >= 4.0
 Requires:	bluez-hcidump
 Requires:	bluez-utils
 Requires:	btsco
 Requires:	kdewebdev-kommander
-%{?with_kdialog:Requires: kdebase-kdialog}
+Requires:	kdebase-kdialog
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +36,7 @@ jako urz±dzenia d¼wiêkowego.
 
 %prep
 %setup -q -c
-%{__sed} -i -e 's#/usr/local/bin/btsco#/usr/bin/btsco#g' kbtsco.kmdr
+%patch0 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -48,12 +47,10 @@ install %SOURCE1 $RPM_BUILD_ROOT%{_desktopdir}/kde
 cat > $RPM_BUILD_ROOT%{_bindir}/kbtsco <<EOF
 #!/bin/sh
 
-%if %{with kdialog}
 if [ ! -x %{_bindir}/kmdr-executor ]; then
 exec %{_bindir}/kdialog --error "Package kdewebdev-kommander is missing.\nYou need to install it."
 exit 0
 fi
-%endif
 exec %{_bindir}/kmdr-executor %{_datadir}/%{name}/%{name}.kmdr
 
 EOF
