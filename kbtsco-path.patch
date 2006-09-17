@@ -1,23 +1,11 @@
---- kbtsco.kmdr	2006-09-17 11:08:35.000000000 +0200
-+++ kbtsco.kmdr-new	2006-09-17 17:00:27.235194304 +0200
-@@ -993,13 +993,13 @@
-                     </color>
-                 </property>
-                 <property name="populationText">
--                    <string>@exec(ls /usr/*bin/sdpd ; if [ $? -eq 0 ] ; then echo "" ; else echo "sdpd not found..[required]" ; fi)
--@exec(ls /usr/*bin/hcitool ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcitool not found..[required]" ; fi)
--@exec(ls /usr/*bin/rfcomm ; if [ $? -eq 0 ] ; then echo "" ; else echo "rfcomm not found..[required]" ; fi)
--@exec(ls /usr/*bin/hciconfig ; if [ $? -eq 0 ] ; then echo "" ; else echo "hciconfig not found.." ; fi)
--@exec(ls /usr/*bin/hcidump ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcidump not found[optional].." ; fi)
+--- kbtsco.kmdr	2006-09-18 01:22:26.503956080 +0200
++++ kbtsco.kmdr-new	2006-09-18 01:22:32.866988752 +0200
+@@ -998,7 +998,7 @@
+ @exec(ls /usr/*bin/rfcomm ; if [ $? -eq 0 ] ; then echo "" ; else echo "rfcomm not found..[required]" ; fi)
+ @exec(ls /usr/*bin/hciconfig ; if [ $? -eq 0 ] ; then echo "" ; else echo "hciconfig not found.." ; fi)
+ @exec(ls /usr/*bin/hcidump ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcidump not found[optional].." ; fi)
 -@exec(ls /usr/local/bin/btsco ; if [ $? -eq 0 ] ; then echo "" ; else echo "btsco not found[required].." ; fi)
--@exec(ls /usr/*bin/hcid ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcid not found..[required]" ; fi)
-+                    <string>@exec(ls /usr/bin/sdpd ; if [ $? -eq 0 ] ; then echo "" ; else echo "sdpd not found..[required]" ; fi)
-+@exec(ls /usr/bin/hcitool ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcitool not found..[required]" ; fi)
-+@exec(ls /usr/bin/rfcomm ; if [ $? -eq 0 ] ; then echo "" ; else echo "rfcomm not found..[required]" ; fi)
-+@exec(ls /usr/bin/hciconfig ; if [ $? -eq 0 ] ; then echo "" ; else echo "hciconfig not found.." ; fi)
-+@exec(ls /usr/bin/hcidump ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcidump not found[optional].." ; fi)
 +@exec(ls /usr/bin/btsco ; if [ $? -eq 0 ] ; then echo "" ; else echo "btsco not found[required].." ; fi)
-+@exec(ls /usr/bin/hcid ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcid not found..[required]" ; fi)
+ @exec(ls /usr/*bin/hcid ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcid not found..[required]" ; fi)
  
  </string>
-                 </property>
