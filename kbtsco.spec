@@ -15,8 +15,8 @@ BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	bluez-hcidump
 Requires:	bluez-utils
 Requires:	btsco
-Requires:	kdewebdev-kommander
 Requires:	kdebase-kdialog
+Requires:	kdewebdev-kommander
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
