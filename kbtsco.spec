@@ -1,6 +1,5 @@
-
-Summary:	kbtsco is a kommander script that help connection with bluetooth headset
-Summary(pl):	kbtsco to skrypt kommandera, który pomaga ³±czyæ zestaw s³uchawkowy Bluetooth
+Summary:	kbtsco - a kommander script that help connection with bluetooth headset
+Summary(pl):	kbtsco - skrypt kommandera pomagaj±cy pod³±czyæ zestaw s³uchawkowy Bluetooth
 Name:		kbtsco
 Version:	1.4.4
 Release:	2
@@ -21,18 +20,18 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 kbtsco is a kommander script that help connection with bluetooth
-headset (tested with sony ericsson HBH-600) to use with xmms,audacity
+headset (tested with Sony Ericsson HBH-600) to use with xmms, audacity
 or skype. The features of this GUI included the starting daemon
-sdpd,hcid and rfcomm and scan MAC address to use with BTSCO in order
+sdpd, hcid and rfcomm and scan MAC address to use with BTSCO in order
 to select headphone as sound device.
 
 %description -l pl
-kbtsco to skrypt kommandera, który pomaga ³±czyæ zestaw s³uchawkowy
-Bluetooth (testowane z sony ericsson HBH-600) z oprogramowaniem. Mo¿na
-go u¿yæ z xmms, audacity lub skype. Mo¿liwo¶ci interfejsu graficznego
-zawieraj±: uruchomienie demona sdpd, hcid i rfcomm oraz skanowanie
-adresów MAC aby u¿ywaæ ich z BTSCO w celu wyboru zestawu s³uchawkowego
-jako urz±dzenia d¼wiêkowego.
+kbtsco to skrypt kommandera pomagaj±cy przy pod³±czaniu zestawu
+s³uchawkowego Bluetooth (testowane z Sony Ericsson HBH-600) do
+u¿ywania z XMMS-em, audacity czy skypem. Mo¿liwo¶ci interfejsu
+graficznego obejmuj±: uruchomienie demona sdpd, hcid i rfcomm oraz
+skanowanie adresów MAC aby u¿ywaæ ich z BTSCO w celu wyboru zestawu
+s³uchawkowego jako urz±dzenia d¼wiêkowego.
 
 %prep
 %setup -q -c
@@ -47,12 +46,7 @@ install %SOURCE1 $RPM_BUILD_ROOT%{_desktopdir}/kde
 cat > $RPM_BUILD_ROOT%{_bindir}/kbtsco <<EOF
 #!/bin/sh
 
-if [ ! -x %{_bindir}/kmdr-executor ]; then
-exec %{_bindir}/kdialog --error "Package kdewebdev-kommander is missing.\nYou need to install it."
-exit 0
-fi
 exec %{_bindir}/kmdr-executor %{_datadir}/%{name}/%{name}.kmdr
-
 EOF
 
 %clean
