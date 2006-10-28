@@ -1,6 +1,6 @@
---- kbtsco.kmdr	2006-09-18 01:22:26.503956080 +0200
-+++ kbtsco.kmdr-new	2006-09-18 01:22:32.866988752 +0200
-@@ -998,7 +998,7 @@
+--- kbtsco5.kmdr	2006-10-28 16:26:18.000000000 +0200
++++ kbtsco5.kmdr-new	2006-10-28 18:14:31.679698552 +0200
+@@ -971,7 +971,7 @@
  @exec(ls /usr/*bin/rfcomm ; if [ $? -eq 0 ] ; then echo "" ; else echo "rfcomm not found..[required]" ; fi)
  @exec(ls /usr/*bin/hciconfig ; if [ $? -eq 0 ] ; then echo "" ; else echo "hciconfig not found.." ; fi)
  @exec(ls /usr/*bin/hcidump ; if [ $? -eq 0 ] ; then echo "" ; else echo "hcidump not found[optional].." ; fi)
