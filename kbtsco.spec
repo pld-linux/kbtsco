@@ -1,3 +1,4 @@
+%define		_minorver	5
 Summary:	kbtsco - a kommander script that help connection with bluetooth headset
 Summary(pl):	kbtsco - skrypt kommandera pomagaj±cy pod³±czyæ zestaw s³uchawkowy Bluetooth
 Name:		kbtsco
@@ -5,7 +6,7 @@ Version:	1.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.kde-apps.org/content/files/45427-%{name}5.kmdr.tar.bz2
+Source0:	http://www.kde-apps.org/content/files/45427-%{name}%{_minorver}.kmdr.tar.bz2
 # Source0-md5:	958d630b9215ada2f4b555f552b89ebc
 Source1:	%{name}.desktop
 Patch0:		%{name}-path.patch
@@ -40,13 +41,13 @@ s³uchawkowego jako urz±dzenia d¼wiêkowego.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_bindir},%{_desktopdir}/kde}
-install kbtsco5.kmdr $RPM_BUILD_ROOT%{_datadir}/%{name}
+install %{name}%{_minorver}.kmdr $RPM_BUILD_ROOT%{_datadir}/%{name}
 install %SOURCE1 $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 cat > $RPM_BUILD_ROOT%{_bindir}/kbtsco <<EOF
 #!/bin/sh
 
-exec %{_bindir}/kmdr-executor %{_datadir}/%{name}/%{name}5.kmdr
+exec %{_bindir}/kmdr-executor %{_datadir}/%{name}/%{name}%{_minorver}.kmdr
 EOF
 
 %clean
@@ -56,5 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kbtsco
 %dir %{_datadir}/%{name}
-%attr(755,root,root) %{_datadir}/%{name}/kbtsco5.kmdr
+%attr(755,root,root) %{_datadir}/%{name}/%{name}%{_minorver}.kmdr
 %{_desktopdir}/kde/%{name}.desktop
