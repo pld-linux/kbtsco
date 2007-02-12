@@ -1,6 +1,6 @@
 %define		_minorver	5
 Summary:	kbtsco - a kommander script that help connection with bluetooth headset
-Summary(pl):	kbtsco - skrypt kommandera pomagaj±cy pod³±czyæ zestaw s³uchawkowy Bluetooth
+Summary(pl.UTF-8):   kbtsco - skrypt kommandera pomagajÄ…cy podÅ‚Ä…czyÄ‡ zestaw sÅ‚uchawkowy Bluetooth
 Name:		kbtsco
 Version:	1.5
 Release:	1
@@ -26,13 +26,13 @@ or skype. The features of this GUI included the starting daemon
 sdpd, hcid and rfcomm and scan MAC address to use with BTSCO in order
 to select headphone as sound device.
 
-%description -l pl
-kbtsco to skrypt kommandera pomagaj±cy przy pod³±czaniu zestawu
-s³uchawkowego Bluetooth (testowane z Sony Ericsson HBH-600) do
-u¿ywania z XMMS-em, audacity czy skypem. Mo¿liwo¶ci interfejsu
-graficznego obejmuj±: uruchomienie demona sdpd, hcid i rfcomm oraz
-skanowanie adresów MAC aby u¿ywaæ ich z BTSCO w celu wyboru zestawu
-s³uchawkowego jako urz±dzenia d¼wiêkowego.
+%description -l pl.UTF-8
+kbtsco to skrypt kommandera pomagajÄ…cy przy podÅ‚Ä…czaniu zestawu
+sÅ‚uchawkowego Bluetooth (testowane z Sony Ericsson HBH-600) do
+uÅ¼ywania z XMMS-em, audacity czy skypem. MoÅ¼liwoÅ›ci interfejsu
+graficznego obejmujÄ…: uruchomienie demona sdpd, hcid i rfcomm oraz
+skanowanie adresÃ³w MAC aby uÅ¼ywaÄ‡ ich z BTSCO w celu wyboru zestawu
+sÅ‚uchawkowego jako urzÄ…dzenia dÅºwiÄ™kowego.
 
 %prep
 %setup -q -c
