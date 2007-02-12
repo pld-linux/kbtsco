@@ -1,6 +1,6 @@
 %define		_minorver	5
 Summary:	kbtsco - a kommander script that help connection with bluetooth headset
-Summary(pl.UTF-8):   kbtsco - skrypt kommandera pomagający podłączyć zestaw słuchawkowy Bluetooth
+Summary(pl.UTF-8):	kbtsco - skrypt kommandera pomagający podłączyć zestaw słuchawkowy Bluetooth
 Name:		kbtsco
 Version:	1.5
 Release:	1
