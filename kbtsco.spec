@@ -1,13 +1,13 @@
-%define		_minorver	5
+%define		_minorver	%(echo %{version}|cut -b 3)
 Summary:	kbtsco - a kommander script that help connection with bluetooth headset
 Summary(pl.UTF-8):	kbtsco - skrypt kommandera pomagający podłączyć zestaw słuchawkowy Bluetooth
 Name:		kbtsco
-Version:	1.5
+Version:	1.6
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.kde-apps.org/content/files/45427-%{name}%{_minorver}.kmdr.tar.bz2
-# Source0-md5:	958d630b9215ada2f4b555f552b89ebc
+Source0:	http://www.kde-apps.org/CONTENT/content-files/45427-%{name}%{_minorver}.kmdr.tar.bz2
+# Source0-md5:	327eda859da9a079d43911ee76510473
 Source1:	%{name}.desktop
 Patch0:		%{name}-path.patch
 URL:		http://www.kde-apps.org/content/show.php?content=45427
